@@ -1,0 +1,9 @@
+<svg width="280" height="60" viewBox="0 0 280 60" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景 -->
+  <rect width="280" height="60" fill="white" rx="6"/>
+  
+  <!-- 主要文字 SenseAlign -->
+  <text x="140" y="38" font-family="Arial, sans-serif" font-size="28" font-weight="600" text-anchor="middle" fill="#2C3E50">
+    <tspan fill="#4A90E2">Sense</tspan><tspan fill="#2C3E50">Align</tspan>
+  </text>
+</svg>
