@@ -3,8 +3,9 @@
 # SenseAlign ASR - 基于SenseVoice和目标文本对齐的ASR系统
 
 <div align="center">
-    <img src="image\SenseAlign_logo.svg" alt="logo" style="zoom:400%;" />
+    <img src="image\SenseAlign_logo.svg" alt="logo" style="zoom:800%;" />
 </div>
+
 
 ![SenseAlign](https://img.shields.io/badge/SenseAlign-ASR%E7%B3%BB%E7%BB%9F-blue) ![Python](https://img.shields.io/badge/Python-3.8+-green) ![Flask](https://img.shields.io/badge/Flask-2.0+-orange) ![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-red)
 
@@ -14,7 +15,7 @@
 
 SenseAlign ASR是一个集成目标文本对齐纠错功能的高精度语音识别系统，具备以下核心能力：
 
-- **SenseVoiceSmall模型**: 基于阿里达摩院开源的高精度多语言语音识别模型
+- **[SenseVoiceSmall模型](https://github.com/FunAudioLLM/SenseVoice)**: 基于阿里达摩院开源的高精度多语言语音识别模型
 - **目标文本对齐**: 通过与预设目标文本对比，实现智能纠错和内容验证
 - **多语言支持**: 支持中文、英文、粤语、日语、韩语及自动语言检测
 - **拼音级纠错**: 基于拼音相似度算法，精准识别和纠正发音错误
@@ -39,10 +40,10 @@ pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
 
 ### 模型文件准备
 
-执行`download_models` 将以下模型文件存储于`./models/iic/`目录下：
+执行`download_models.py` 将以下模型文件存储于`./models/iic/`目录下：
 
-- **SenseVoiceSmall**: 主要的多语言语音识别模型
-- **speech_fsmn_vad_zh-cn-16k-common-pytorch**: 语音活动检测(VAD)模型
+- **[SenseVoiceSmall](https://www.modelscope.cn/models/iic/SenseVoiceSmall)**: 主要的多语言语音识别模型
+- **[speech_fsmn_vad_zh-cn-16k-common-pytorch](https://www.modelscope.cn/models/iic/speech_fsmn_vad_zh-cn-16k-common-pytorch)**: 语音活动检测(VAD)模型
 
 ### 启动服务
 
@@ -96,7 +97,7 @@ curl -X POST http://localhost:5001/recognize \
   -F "target_file=@target_script.txt"
 ```
 
-**成功响应示例**:
+### **成功响应示例**:
 
 ```json
 {
@@ -123,6 +124,30 @@ SenseAlign-ASR/
 ├── templates/             # Web界面模板
 └── README.md             # 项目说明文档
 ```
+
+## 🎨 识别结果展示
+
+### Web界面展示
+
+<div align="center">
+    <img src="image/web_show.png" alt="web" />
+</div>
+
+### demo1（未对齐）
+
+<div align="center">
+    <img src="image/demo1.png" alt="web" />
+</div>
+
+### demo2（对齐）
+
+<div align="center">
+    <img src="image/demo2_1.png" alt="web"/>
+</div>
+
+<div align="center">
+    <img src="image/demo2_2.png" alt="web"/>
+</div>
 
 ## 🔧 技术支持
 
